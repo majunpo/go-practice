@@ -1,4 +1,4 @@
-module myproject
+module github.com/majunpo/go-learn
 
 go 1.23.2
 
