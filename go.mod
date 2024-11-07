@@ -1,4 +1,4 @@
-module github.com/majunpo/go-learn
+module github.com/majunpo/go-practice
 
 go 1.23.2
 
