@@ -1,4 +1,3 @@
-
 package main
 
 
@@ -11,7 +10,6 @@ import (
 
 	"github.com/intel/fastgo/compress/gzip"
 )
-
 
 func main() {
 	flag.Usage = func() {
@@ -31,12 +29,11 @@ func main() {
 	inputFile := flag.Arg(0)
 
 	if *decompress {
-		decompressFile(inputFile)	
+		decompressFile(inputFile)
 	} else {
 		compressFile(inputFile, *level)
 	}
 }
-
 
 func compressFile(inputFile string, level int) {
 	file, err := os.Open(inputFile)
@@ -63,7 +60,7 @@ func compressFile(inputFile string, level int) {
 	}
 
 	fmt.Printf("Compressed %s to %s\n", inputFile, outputFile)
-	
+
 }
 
 func decompressFile(inputFile string) {
@@ -79,7 +76,7 @@ func decompressFile(inputFile string) {
 	}
 	defer gr.Close()
 
-	outputFile := inputFile[:len(inputFile)-3]  //Remove .gz extension
+	outputFile := inputFile[:len(inputFile)-3] //Remove .gz extension
 	out, err := os.Create(outputFile)
 	if err != nil {
 		log.Fatalf("Failed to create output file: %v", err)
